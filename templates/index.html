@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITailor Innovations</title>
+    <style>
+        /* Ваши стили CSS могут быть добавлены здесь */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигационное меню -->
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about" onclick="showAbout()">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+        </ul>
+    </nav>
+
+    <!-- Главная страница -->
+    <section id="home">
+        <h1>Welcome to ITailor Innovations</h1>
+        <p>Leading the way in innovative IT solutions.</p>
+        <a href="#about" onclick="showAbout()">Узнать больше</a>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" style="display: none;">
+        <h2>О нас</h2>
+        <p>ITailor Innovations - компания, занимающаяся разработкой инновационных IT-решений...</p>
+        <!-- Биографии и другая информация добавляются здесь -->
+    </section>
+
+    <!-- Услуги -->
+    <section id="services">
+        <h2>Услуги</h2>
+        <ul>
+            <li>Разработка программного обеспечения</li>
+            <li>Интеграция систем</li>
+            <li>Консалтинг по информационным технологиям</li>
+        </ul>
+    </section>
+
+    <script>
+        function showAbout() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('services').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
