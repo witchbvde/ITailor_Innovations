@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITailor Innovations</title>
     <style>
-        /* Ваши стили CSS могут быть добавлены здесь */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,70 +12,112 @@
             box-sizing: border-box;
         }
 
-        nav {
+        header {
             background-color: #333;
             color: #fff;
-            padding: 10px;
-            text-align: center;
+            padding: 1em;
+            text-align: left; /* выравнивание текста влево */
         }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold; /* выделение жирным шрифтом */
+            font-size: 1.5em; /* чуть больше размер */
+            cursor: pointer;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 1em;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out; /* добавлен эффект плавного изменения цвета */
         }
 
         section {
-            padding: 20px;
+            padding: 2em;
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <!-- Навигационное меню -->
+    <header>
+        <a href="#" onclick="showContent('home')">ITailor Innovations</a>
+    </header>
+
     <nav>
-        <ul>
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#about" onclick="showAbout()">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-        </ul>
+        <a onclick="showContent('home')">Главная</a>
+        <a onclick="showContent('about')">О нас</a>
+        <a onclick="showContent('services')">Услуги</a>
+        <a onclick="showContent('portfolio')">Портфолио</a>
+        <a onclick="showContent('contact')">Контакты</a>
     </nav>
 
-    <!-- Главная страница -->
     <section id="home">
-        <h1>Welcome to ITailor Innovations</h1>
-        <p>Leading the way in innovative IT solutions.</p>
-        <a href="#about" onclick="showAbout()">Узнать больше</a>
+        <h2>Добро пожаловать в ITailor Innovations</h2>
+        <p>Ведущие в инновационных IT-решениях.</p>
     </section>
 
-    <!-- О нас -->
-    <section id="about" style="display: none;">
+    <section id="about">
         <h2>О нас</h2>
-        <p>ITailor Innovations - компания, занимающаяся разработкой инновационных IT-решений...</p>
-        <!-- Биографии и другая информация добавляются здесь -->
+        <p>ITailor Innovations посвящена предоставлению...</p>
     </section>
 
-    <!-- Услуги -->
     <section id="services">
-        <h2>Услуги</h2>
+        <h2>Наши Услуги</h2>
         <ul>
             <li>Разработка программного обеспечения</li>
             <li>Интеграция систем</li>
-            <li>Консалтинг по информационным технологиям</li>
+            <li>IT-консалтинг</li>
         </ul>
     </section>
 
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <!-- Добавьте элементы портфолио здесь -->
+    </section>
+
+    <section id="contact">
+        <h2>Свяжитесь с нами</h2>
+        <p>Свяжитесь с нами:</p>
+        <!-- Добавьте форму обратной связи или контактную информацию здесь -->
+    </section>
+
+    <footer>
+        &copy; 2023 ITailor Innovations. Все права защищены.
+    </footer>
+
     <script>
-        function showAbout() {
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('about').style.display = 'block';
-            document.getElementById('services').style.display = 'none';
+        function showContent(sectionId) {
+            // Скрыть все разделы
+            document.querySelectorAll('section').forEach(function (el) {
+                el.style.display = 'none';
+            });
+
+            // Плавно показать выбранный раздел
+            document.getElementById(sectionId).style.display = 'block';
         }
+
+        // Вызвать функцию для отображения главной страницы при загрузке
+        showContent('home');
     </script>
 
 </body>
