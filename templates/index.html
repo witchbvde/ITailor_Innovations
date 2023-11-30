@@ -6,39 +6,49 @@
     <title>ITailor Innovations</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-image: url('background-image.png');
+            background-size: cover; /* Регулировка размера фонового изображения */
+            background-position: center; /* Центрирование фонового изображения */
+            background-color: #f8f9fa;
+            color: #343a40;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #343a40;
+            color: #ffffff;
             padding: 1em;
-            text-align: left; /* выравнивание текста влево */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold; /* выделение жирным шрифтом */
-            font-size: 1.5em; /* чуть больше размер */
+            font-weight: bold;
+            font-size: 1.5em;
             cursor: pointer;
         }
 
         nav {
-            background-color: #444;
-            color: #fff;
+            background-color: #495057;
+            color: #ffffff;
             padding: 1em;
+            text-align: center;
+            margin-left: auto;
         }
 
         nav a {
-            color: #fff;
+            color: #ffffff;
             margin: 0 1em;
             text-decoration: none;
             cursor: pointer;
-            transition: color 0.3s ease-in-out; /* добавлен эффект плавного изменения цвета */
+            transition: color 0.3s ease-in-out;
+            font-size: 1.2em;
         }
 
         section {
@@ -46,14 +56,23 @@
             display: none;
         }
 
+        section h2 {
+            color: #343a40;
+        }
+
+        section p {
+            color: #6c757d;
+        }
+
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #343a40;
+            color: #ffffff;
             text-align: center;
             padding: 1em;
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 0.8em;
         }
     </style>
 </head>
@@ -61,19 +80,18 @@
 
     <header>
         <a href="#" onclick="showContent('home')">ITailor Innovations</a>
+        <nav>
+            <a onclick="showContent('home')">Главная</a>
+            <a onclick="showContent('about')">О нас</a>
+            <a onclick="showContent('services')">Услуги</a>
+            <a onclick="showContent('portfolio')">Портфолио</a>
+            <a onclick="showContent('contact')">Контакты</a>
+        </nav>
     </header>
-
-    <nav>
-        <a onclick="showContent('home')">Главная</a>
-        <a onclick="showContent('about')">О нас</a>
-        <a onclick="showContent('services')">Услуги</a>
-        <a onclick="showContent('portfolio')">Портфолио</a>
-        <a onclick="showContent('contact')">Контакты</a>
-    </nav>
 
     <section id="home">
         <h2>Добро пожаловать в ITailor Innovations</h2>
-        <p>Ведущие в инновационных IT-решениях.</p>
+        <p>Мы специализируемся в создании сайтов и разработке ботов для популярных платформ,<br> таких как Telegram и VK.</p>
     </section>
 
     <section id="about">
@@ -83,10 +101,11 @@
 
     <section id="services">
         <h2>Наши Услуги</h2>
+        <p>Мы предоставляем разнообразные IT-услуги, включая:</p>
         <ul>
-            <li>Разработка программного обеспечения</li>
-            <li>Интеграция систем</li>
-            <li>IT-консалтинг</li>
+            <li>Создание сайтов</li>
+            <li>Разработка ботов для Telegram и VK</li>
+            <!-- Добавьте другие услуги по вашему выбору -->
         </ul>
     </section>
 
@@ -97,8 +116,9 @@
 
     <section id="contact">
         <h2>Свяжитесь с нами</h2>
-        <p>Свяжитесь с нами:</p>
-        <!-- Добавьте форму обратной связи или контактную информацию здесь -->
+        <p>Телефон: 8-999-770-8189</p>
+        <p>Email: vageskamm1234@gmail.com</p>
+        <p><a href="https://vk.com/wrqzzd">VK</a></p>
     </section>
 
     <footer>
@@ -107,16 +127,12 @@
 
     <script>
         function showContent(sectionId) {
-            // Скрыть все разделы
             document.querySelectorAll('section').forEach(function (el) {
                 el.style.display = 'none';
             });
-
-            // Плавно показать выбранный раздел
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Вызвать функцию для отображения главной страницы при загрузке
         showContent('home');
     </script>
 
